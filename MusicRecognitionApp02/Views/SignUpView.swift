@@ -25,6 +25,7 @@ struct SignUpView: View {
         return passwordRegex.evaluate(with: password)
     }
     
+    //signUpView UI
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)

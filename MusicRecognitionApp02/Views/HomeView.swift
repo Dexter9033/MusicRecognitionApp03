@@ -7,10 +7,14 @@
 
 import SwiftUI
 import FirebaseAuth
+import AVKit
 
 struct HomeView: View {
     @AppStorage("uid") var userID: String = ""
     @State var record = false
+    @State var session : AVAudioSession!
+    @State var recorder : AVAudioRecorder!
+    @State var alert = false
     
     var body: some View {
         NavigationView{
@@ -47,6 +51,27 @@ struct HomeView: View {
                         .padding(.horizontal)
                 }
             }.navigationTitle("Record Audio")
+        }
+        .alert(isPresented: self.$alert, content: {
+            Alert(title: Text("Error"), message: Text("enable access"))
+        })
+        .onAppear{
+            do{
+                // Intializing
+                self.session = AVAudioSession.sharedInstance()
+                try self.session.setCategory(.playAndRecord)
+                // requesting permission
+                self.session.requestRecordPermission{
+                    (status) in
+                    if !status{
+                        // error message
+                        self.alert.toggle()
+                    }
+                }
+            }
+            catch{
+                print(error.localizedDescription)
+            }
         }
     }
 }
