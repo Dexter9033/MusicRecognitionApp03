@@ -40,9 +40,12 @@ struct LoginView: View {
                     
                     Spacer()
                     
-                    Image(systemName: "checkmark")
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
+                    if(email.count != 0) {
+                        Image(systemName: "checkmark")
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                    }
+                    
                 }
                 .padding()
                 .overlay(
@@ -58,9 +61,12 @@ struct LoginView: View {
                     
                     Spacer()
                     
-                    Image(systemName: "checkmark")
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
+                    if(password.count != 0) {
+                        Image(systemName: "checkmark")
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                    }
+                    
                 }
                 .padding()
                 .overlay(
