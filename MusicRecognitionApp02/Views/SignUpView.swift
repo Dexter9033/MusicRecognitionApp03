@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SignUpView: View {
+    @Binding var currentShowingView: String
+    
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -92,6 +94,7 @@ struct SignUpView: View {
                 .padding()
                 
                 Button(action: {
+                    withAnimation{self.currentShowingView = "login"}
                     
                 }) {
                     Text("Already have an account?")
@@ -119,13 +122,5 @@ struct SignUpView: View {
                 
             }
         }
-    }
-}
-
-
-struct SignUpView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignUpView()
-            .preferredColorScheme(.dark)
     }
 }
