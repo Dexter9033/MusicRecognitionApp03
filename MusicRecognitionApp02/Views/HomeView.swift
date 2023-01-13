@@ -15,19 +15,35 @@ struct HomeView: View {
     @State var session : AVAudioSession!
     @State var recorder : AVAudioRecorder!
     @State var alert = false
+    //Fetch Audios
+    @State var audios : [URL] = []
     
     var body: some View {
         NavigationView{
             VStack{
-                Text("login success! \nYour uid is \(userID)")
-                Spacer()
+                VStack{
+                List(self.audios,id: \.self){i in
+                    //print file name only
+                    
+                }}
                 
                 Button (action: {
                     // record audio
-                    do{
+                    do{                        
+                        if self.record{
+                            
+                            // Already Started Recording means stopping and saving
+                            
+                            self.recorder.stop()
+                            self.record.toggle()
+                            // update for every record
+                            self.getAudios()
+                            return
+                        }
+                        
                         let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
 
-                        let filName = url.appendingPathComponent("myRecord.m4a")
+                        let filName = url.appendingPathComponent("myRecord\(self.audios.count + 1).m4a")
                         
                         let settings = [
                         
@@ -74,11 +90,10 @@ struct HomeView: View {
             }.navigationTitle("Record Audio")
         }
         .alert(isPresented: self.$alert, content: {
-            Alert(title: Text("Error"), message: Text("enable access"))
+            Alert(title: Text("Error"), message: Text("Enable access"))
         })
         .onAppear{
             do{
-                // Intializing
                 self.session = AVAudioSession.sharedInstance()
                 try self.session.setCategory(.playAndRecord)
                 // requesting permission
@@ -87,12 +102,39 @@ struct HomeView: View {
                     if !status{
                         // error message
                         self.alert.toggle()
+                    }else{
+                        // fetching all date when permission granted
+                        self.getAudios()
                     }
                 }
             }
             catch{
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    func getAudios(){
+        do{
+            
+            let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            
+            // fetch all data from document directory
+            
+            let result = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .producesRelativePathURLs)
+            
+            // updated means remove all old data
+            
+            self.audios.removeAll()
+            
+            for i in result{
+                
+                self.audios.append(i)
+            }
+        }
+        catch{
+            
+            print(error.localizedDescription)
         }
     }
 }
