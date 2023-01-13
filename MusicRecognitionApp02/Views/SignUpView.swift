@@ -111,7 +111,7 @@ struct SignUpView: View {
                                 return
                             }
                             if let authResult = authResult {
-                                print(authResult)
+                                print(authResult.user.uid)
                             }
                         }
                 } label: {
