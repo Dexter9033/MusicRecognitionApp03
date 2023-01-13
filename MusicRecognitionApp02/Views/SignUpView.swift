@@ -45,7 +45,7 @@ struct SignUpView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 150, height: 150)
-                Text("Music Recognition App")
+                Text("Music Recorder App")
                     .foregroundColor(.white)
                     .font(.title2)
                 Spacer()

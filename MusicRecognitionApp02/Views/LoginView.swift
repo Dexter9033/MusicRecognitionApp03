@@ -44,7 +44,7 @@ struct LoginView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 150, height: 150)
-                Text("Music Recognition App")
+                Text("Music Recorder App")
                     .font(.title2)
                 Spacer()
                 
