@@ -13,6 +13,7 @@
 		C92931B5297126D700930E5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92931B4297126D700930E5C /* Preview Assets.xcassets */; };
 		C92931BD297128DB00930E5C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92931BC297128DB00930E5C /* LoginView.swift */; };
 		C92931C12971325800930E5C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92931C02971325800930E5C /* String.swift */; };
+		C92931C32971353800930E5C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92931C22971353800930E5C /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		C92931B4297126D700930E5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C92931BC297128DB00930E5C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C92931C02971325800930E5C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		C92931C22971353800930E5C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				C92931BC297128DB00930E5C /* LoginView.swift */,
+				C92931C22971353800930E5C /* SignUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C92931BD297128DB00930E5C /* LoginView.swift in Sources */,
+				C92931C32971353800930E5C /* SignUpView.swift in Sources */,
 				C92931B0297126D600930E5C /* ContentView.swift in Sources */,
 				C92931C12971325800930E5C /* String.swift in Sources */,
 				C92931AE297126D600930E5C /* MusicRecognitionApp02App.swift in Sources */,

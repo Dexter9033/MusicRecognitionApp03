@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  SignUpView.swift
 //  MusicRecognitionApp02
 //
 //  Created by Dexter on 13/1/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct SignUpView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -24,11 +24,12 @@ struct LoginView: View {
     
     var body: some View {
         ZStack {
-            Color.white.edgesIgnoringSafeArea(.all)
+            Color.black.edgesIgnoringSafeArea(.all)
             
             VStack {
                 HStack {
-                    Text("Welcome Back!")
+                    Text("Create Account Here!")
+                        .foregroundColor(.white)
                         .font(.largeTitle)
                         .bold()
                     
@@ -42,6 +43,7 @@ struct LoginView: View {
                     .scaledToFit()
                     .frame(width: 150, height: 150)
                 Text("Music Recognition App")
+                    .foregroundColor(.white)
                     .font(.title2)
                 Spacer()
                 
@@ -58,11 +60,12 @@ struct LoginView: View {
                     }
                     
                 }
+                .foregroundColor(.white)
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                 )
                 .padding()
                 
@@ -79,18 +82,19 @@ struct LoginView: View {
                     }
                     
                 }
+                .foregroundColor(.white)
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                 )
                 .padding()
                 
                 Button(action: {
                     
                 }) {
-                    Text("Don't have an account?")
+                    Text("Already have an account?")
                 }
                 Spacer()
                 Spacer()
@@ -98,8 +102,8 @@ struct LoginView: View {
                 Button(action: {
                     
                 }, label: {
-                    Text("Sign in")
-                        .foregroundColor(.white)
+                    Text("Create an Account")
+                        .foregroundColor(.black)
                         .font(.title3)
                         .bold()
                     
@@ -108,7 +112,7 @@ struct LoginView: View {
                     
                         .background(
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.black)
+                                .fill(Color.white)
                         )
                         .padding(.horizontal)
                 })
@@ -118,8 +122,10 @@ struct LoginView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+
+struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        SignUpView()
+            .preferredColorScheme(.dark)
     }
 }
