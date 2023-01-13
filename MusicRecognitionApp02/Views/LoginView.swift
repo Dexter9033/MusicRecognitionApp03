@@ -26,6 +26,12 @@ struct LoginView: View {
                 .padding()
                 .padding(.top)
                 
+                Image("logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 150)
+                Text("Music Recognition App")
+                    .font(.title2)
                 Spacer()
                 
                 HStack {
@@ -63,8 +69,34 @@ struct LoginView: View {
                         .foregroundColor(.black)
                 )
                 .padding()
+                
+                Button(action: {
+                    
+                }) {
+                    Text("Don't have an account?")
+                }
+                Spacer()
+                Spacer()
+             
+                Button(action: {
+                    
+                }, label: {
+                    Text("Sign in")
+                        .foregroundColor(.white)
+                        .font(.title3)
+                        .bold()
+                    
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                    
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.black)
+                        )
+                        .padding(.horizontal)
+                })
+                
             }
-            
         }
     }
 }
