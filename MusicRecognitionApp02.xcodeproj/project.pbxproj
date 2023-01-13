@@ -15,9 +15,9 @@
 		C92931C12971325800930E5C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92931C02971325800930E5C /* String.swift */; };
 		C92931C32971353800930E5C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92931C22971353800930E5C /* SignUpView.swift */; };
 		C92931C52971371800930E5C /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92931C42971371800930E5C /* AuthView.swift */; };
-		C92931C729713B0E00930E5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C92931C629713B0E00930E5C /* GoogleService-Info.plist */; };
 		C92931CA29713CF400930E5C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C92931C929713CF400930E5C /* FirebaseAuth */; };
 		C92931CC29713CF400930E5C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C92931CB29713CF400930E5C /* FirebaseFirestore */; };
+		C92931D229715CF400930E5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C92931D129715CF400930E5C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,8 @@
 		C92931C02971325800930E5C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C92931C22971353800930E5C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C92931C42971371800930E5C /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
-		C92931C629713B0E00930E5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C92931D129715CF400930E5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C92931D329715DB300930E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +66,8 @@
 		C92931AC297126D600930E5C /* MusicRecognitionApp02 */ = {
 			isa = PBXGroup;
 			children = (
-				C92931C629713B0E00930E5C /* GoogleService-Info.plist */,
+				C92931D329715DB300930E5C /* Info.plist */,
+				C92931D129715CF400930E5C /* GoogleService-Info.plist */,
 				C92931BF2971322300930E5C /* Extensions */,
 				C92931BB297128A400930E5C /* Views */,
 				C92931AD297126D600930E5C /* MusicRecognitionApp02App.swift */,
@@ -169,7 +171,7 @@
 			files = (
 				C92931B5297126D700930E5C /* Preview Assets.xcassets in Resources */,
 				C92931B2297126D700930E5C /* Assets.xcassets in Resources */,
-				C92931C729713B0E00930E5C /* GoogleService-Info.plist in Resources */,
+				C92931D229715CF400930E5C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +318,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MusicRecognitionApp02/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = MusicRecognitionApp02/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -344,7 +346,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MusicRecognitionApp02/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = MusicRecognitionApp02/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -2,7 +2,7 @@ import SwiftUI
 import FirebaseCore
 
 @main
-struct SwiftUI_AuthApp: App {
+struct MusicRecognitionApp02App: App {
     
     init() {
         FirebaseApp.configure()
