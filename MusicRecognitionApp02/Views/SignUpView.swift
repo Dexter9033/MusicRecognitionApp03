@@ -10,7 +10,7 @@ import FirebaseAuth
 
 struct SignUpView: View {
     @Binding var currentShowingView: String
-    
+    @AppStorage("uid") var userID: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -112,6 +112,7 @@ struct SignUpView: View {
                             }
                             if let authResult = authResult {
                                 print(authResult.user.uid)
+                                userID = authResult.user.uid
                             }
                         }
                 } label: {
