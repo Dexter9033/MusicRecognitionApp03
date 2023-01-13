@@ -11,6 +11,17 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     
+    private func isValidPassword(_ password: String) -> Bool {
+        
+        // at least 6 characters
+        // 1 uppercase character
+        // 1 special char
+        
+        let passwordRegex = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])(?=.*[A-Z]).{6,}$")
+        
+        return passwordRegex.evaluate(with: password)
+    }
+    
     var body: some View {
         ZStack {
             Color.white.edgesIgnoringSafeArea(.all)
@@ -41,9 +52,9 @@ struct LoginView: View {
                     Spacer()
                     
                     if(email.count != 0) {
-                        Image(systemName: "checkmark")
+                        Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
                             .fontWeight(.bold)
-                            .foregroundColor(.black)
+                            .foregroundColor(email.isValidEmail() ? .green : .red)
                     }
                     
                 }
@@ -62,9 +73,9 @@ struct LoginView: View {
                     Spacer()
                     
                     if(password.count != 0) {
-                        Image(systemName: "checkmark")
+                        Image(systemName: isValidPassword(password) ? "checkmark" : "xmark")
                             .fontWeight(.bold)
-                            .foregroundColor(.black)
+                            .foregroundColor(isValidPassword(password) ? .green : .red)
                     }
                     
                 }
