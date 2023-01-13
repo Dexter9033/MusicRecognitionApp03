@@ -24,7 +24,7 @@ struct ContentView_Previews: PreviewProvider {
 
 
 struct Home : View {
-    
+    @AppStorage("uid") var userID: String = ""
     @State var record = false
     // creating instance for recroding
     @State var session : AVAudioSession!
@@ -64,7 +64,6 @@ struct Home : View {
                         
                         let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
                         
-                        // same file name...
                         // so were updating based on audio count...
                         let filName = url.appendingPathComponent("myRecord\(self.audios.count + 1).m4a")
                         
@@ -104,6 +103,19 @@ struct Home : View {
                     }
                 }
                 .padding(.vertical, 25)
+                Button(action: {
+                    let firebaseAuth = Auth.auth()
+                    do {
+                        try firebaseAuth.signOut()
+                        withAnimation {
+                            userID = ""
+                        }
+                    } catch let signOutError as NSError {
+                        print("Error signing out: %@", signOutError)
+                    }
+                }) {
+                    Text("Sign Out")
+                }
             }
             .navigationBarTitle("Record Audio")
         }
