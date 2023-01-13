@@ -18,6 +18,7 @@ struct AuthView: View {
         } else {
             SignUpView(currentShowingView: $currentViewShowing)
                 .preferredColorScheme(.dark)
+                .transition(.move(edge: .bottom))
         }
   
     }
