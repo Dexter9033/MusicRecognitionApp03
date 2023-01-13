@@ -1,10 +1,3 @@
-//
-//  MusicRecognitionApp02App.swift
-//  MusicRecognitionApp02
-//
-//  Created by Tim on 13/1/2023.
-//
-
 import SwiftUI
 
 @main

@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  MusicRecognitionApp02
-//
-//  Created by Tim on 13/1/2023.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -13,7 +6,7 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Hello, worldtesting!")
         }
         .padding()
     }
